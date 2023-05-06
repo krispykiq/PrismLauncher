@@ -156,6 +156,10 @@ public: /* queries */
         return data.type == AccountType::MSA;
     }
 
+    bool isMojang() const {
+        return data.type == AccountType::Mojang;
+    }
+
     bool isOffline() const {
         return data.type == AccountType::Offline;
     }

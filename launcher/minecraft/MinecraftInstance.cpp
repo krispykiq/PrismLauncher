@@ -390,6 +390,13 @@ QStringList MinecraftInstance::extraArguments()
         agent->library()->getApplicableFiles(runtimeContext(), jar, temp1, temp2, temp3, getLocalLibraryPath());
         list.append("-javaagent:"+jar[0]+(agent->argument().isEmpty() ? "" : "="+agent->argument()));
     }
+
+    // TODO: figure out how polymc's javaagent system works and use it instead of this hack
+    if (m_injector) {
+        list.append("-javaagent:"+m_injector->javaArg);
+        list.append("-Dauthlibinjector.noShowServerName");
+    }
+
     return list;
 }
 
