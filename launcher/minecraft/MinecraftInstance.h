@@ -41,6 +41,7 @@
 #include <QProcess>
 #include <QDir>
 #include "minecraft/launch/MinecraftServerTarget.h"
+#include "minecraft/launch/InjectAuthlib.h"
 
 class ModFolderModel;
 class ResourceFolderModel;

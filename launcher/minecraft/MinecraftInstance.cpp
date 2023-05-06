@@ -1021,6 +1021,13 @@ shared_qobject_ptr<LaunchTask> MinecraftInstance::createLaunchTask(AuthSessionPt
         if(!session->demo) {
             process->appendStep(makeShared<ClaimAccount>(pptr, session));
         }
+        
+        // authlib patch
+        if (session->user_type == "elyby")
+        {
+            process->appendStep(makeShared<InjectAuthlib>(pptr, &m_injector));
+        }
+
         process->appendStep(makeShared<Update>(pptr, Net::Mode::Online));
     }
     else
