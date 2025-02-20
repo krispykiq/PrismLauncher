@@ -1,0 +1,2 @@
+/nix/store/bfbp3ypd9nm3fapz634gvvs738blrl0y-gcc-wrapper-12.2.0/bin/ar qc libsysteminfo.a CMakeFiles/systeminfo.dir/systeminfo_autogen/mocs_compilation.cpp.o CMakeFiles/systeminfo.dir/src/distroutils.cpp.o CMakeFiles/systeminfo.dir/src/sys_unix.cpp.o
+/nix/store/bfbp3ypd9nm3fapz634gvvs738blrl0y-gcc-wrapper-12.2.0/bin/ranlib libsysteminfo.a

@@ -1,0 +1,2 @@
+/nix/store/bfbp3ypd9nm3fapz634gvvs738blrl0y-gcc-wrapper-12.2.0/bin/ar qc libqdcss.a CMakeFiles/qdcss.dir/qdcss_autogen/mocs_compilation.cpp.o CMakeFiles/qdcss.dir/src/qdcss.cpp.o
+/nix/store/bfbp3ypd9nm3fapz634gvvs738blrl0y-gcc-wrapper-12.2.0/bin/ranlib libqdcss.a
