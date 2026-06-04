@@ -1,0 +1,24 @@
+name: Build Application
+
+on:
+  # push:
+  #   tags:
+  #     - "*"
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  build_release:
+    name: Build Release
+    uses: ./.github/workflows/build.yml
+    permissions:
+      contents: read
+      # Required for Azure Trusted Signing
+      id-token: write
+      # Required for vcpkg binary cache
+      packages: write
+    with:
+      build-type: Release
+      environment: Release
+    secrets: inherit
