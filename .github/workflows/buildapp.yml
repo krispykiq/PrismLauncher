@@ -1,0 +1,37 @@
+name: Build Application
+
+on:
+  # push:
+  #   tags:
+  #     - "*"
+  workflow_call:
+    inputs:
+      build-type:
+        description: Type of build (Debug or Release)
+        type: string
+        default: Debug
+      environment:
+        description: Deployment environment to run under
+        type: string
+  workflow_dispatch:
+    inputs:
+      build-type:
+        description: Type of build (Debug or Release)
+        type: string
+        default: Debug
+permissions: {}
+
+jobs:
+  build_release:
+    name: Build Release
+    uses: ./.github/workflows/build.yml
+    permissions:
+      contents: read
+      # Required for Azure Trusted Signing
+      id-token: write
+      # Required for vcpkg binary cache
+      packages: write
+    with:
+      build-type: ${{ inputs.build-type || 'Debug' }}
+      environment: ${{ inputs.environment || '' }}
+    secrets: inherit
